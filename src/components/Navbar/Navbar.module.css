@@ -4,7 +4,9 @@
   }
 
 .item {
-    padding: 20px;
-    color: white;
+    padding: 12px;
 }
 
+.item a {
+  color: white;
+}
