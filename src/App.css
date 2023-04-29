@@ -8,20 +8,3 @@
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
-
-.header {
-  grid-area: h;
-  background-color: rgba(42, 67, 102, 1);
-}
-.header img {
-  width: 58px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: rgba(42, 67, 102, 1);
-}
-
-.content {
-  grid-area: c;
-}
