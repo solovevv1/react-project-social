@@ -1,12 +1,10 @@
 import MyPosts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return <div>
-        <img src='https://cleanlife.wdfiles.com/local--files/postcover:beach-header-2/beach-header.jpg' />
-        <div>
-            ava + description
-        </div>
+        <ProfileInfo />
         <MyPosts />
     </div>
 }
