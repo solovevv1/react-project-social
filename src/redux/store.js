@@ -31,11 +31,14 @@ let store = {
 
         }
     },
-    _callSubscriber() { },
 
     getState() {
         return this._state;
     },
+    
+    _callSubscriber() { },
+
+    
     subscribe(observer) {
         this._callSubscriber = observer;
     },
