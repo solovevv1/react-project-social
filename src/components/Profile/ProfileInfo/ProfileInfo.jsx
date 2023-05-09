@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
             <img src='https://cleanlife.wdfiles.com/local--files/postcover:beach-header-2/beach-header.jpg' />
         </div>
         <div className={s.descriptionBlock}>
-            <img src={props.profile.photos.large} />
+            <img src={props.profile.photos.small} />
             {/* ava + description */}
             <div>
                 <div>{props.profile.fullName}</div>
