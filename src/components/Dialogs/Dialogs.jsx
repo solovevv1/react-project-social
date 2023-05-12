@@ -3,6 +3,7 @@ import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/mes
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
+import { Navigate } from 'react-router-dom';
 
 
 const Dialogs = (props) => {
@@ -27,6 +28,8 @@ const Dialogs = (props) => {
         props.updateNewMessageBody(body)
         // props.store.dispatch(updateNewMessageBodyCreator(body));
     };
+
+    if (!props.isAuth) return <Navigate to={'/login'}/> 
 
     return (
         <div className={s.dialogs}>
