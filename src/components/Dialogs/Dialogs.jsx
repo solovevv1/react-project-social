@@ -19,13 +19,13 @@ const Dialogs = (props) => {
     });
     let newMessageBody = state.newMessageBody;
 
-    let onSendMessageClick = () => {
-        props.sendMessage();
-    };
-    let onNewMessageChange = (event) => {
-        let body = event.target.value;
-        props.updateNewMessageBody(body)
-    };
+    // let onSendMessageClick = () => {
+    //     props.sendMessage();
+    // };
+    // let onNewMessageChange = (event) => {
+    //     let body = event.target.value;
+    //     props.updateNewMessageBody(body)
+    // };
 
     let addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody);
@@ -41,12 +41,6 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 <div>{messageElements}</div>
                 <AddMessageFormRedux onSubmit={addNewMessage} />
-                {/* <form>
-                    <div><textarea value={newMessageBody}
-                        onChange={onNewMessageChange}
-                        placeholder='Enter your message'></textarea></div>
-                    <div><button onClick={onSendMessageClick}>Send</button></div>
-                </form> */}
             </div>
         </div>
     )
