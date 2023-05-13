@@ -1,4 +1,5 @@
 import axios from "axios";
+import { login } from "../redux/auth-reducer";
 
 // const baseUrl = `https://social-network.samuraijs.com/api/1.0/`;
 
@@ -48,7 +49,15 @@ export const profileAPI = {
 export const authAPI = {
     me() {
         return instance
-            .get(`/auth/me`)
+            .get(`/auth/me`);
+    },
+    login(email, password, rememberMe=false) {
+        return instance
+            .post(`/auth/login`, {email, password, rememberMe});
+    },
+    logout() {
+        return instance
+            .delete(`/auth/login`);
     }
 
 }

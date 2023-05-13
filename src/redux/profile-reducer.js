@@ -10,7 +10,6 @@ let initialState = {
         { id: 2, post: 'Hi everyone :)', like: 5 },
         { id: 3, post: 'Just getting started', like: 0 }],
 
-    // newPostText: 'it kamasutra',
     profile: null,
     status: ""
 };
@@ -30,14 +29,6 @@ const profileReducer = (state = initialState, action) => {
                 newPostText: '',
             };
         }
-        // case UPDATE_NEW_POST_TEXT: {
-        //     return {
-        //         ...state,
-        //         newPostText: action.newText
-        //     };
-        //     // stateCopy.newPostText = action.newText;
-        //     // return stateCopy;
-        // }
         case SET_USER_PROFILE: {
             return {
                 ...state,
