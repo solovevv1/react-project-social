@@ -1,5 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { maxLengthCreator, required } from '../../../utils/validators/validators';
+import Textarea from '../../Common/FormsControls/FormsControls';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
@@ -15,37 +17,24 @@ const MyPosts = (props) => {
         props.addPost(values.newPostText);
     }
 
-    // let onPostChange = () => {
-    //     let text = newPostElement.current.value;
-    //     props.updateNewPostText(text);
-    // }
-
     return <div className={s.postsBlock}>
         <div>
             <h3>My posts</h3>
         </div>
         <AddNewPostFormRedux onSubmit={onAddPost} />
-
-        {/* <form>
-            <div>
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
-            </div>
-            <div>
-                <button onClick={onAddPost}>Add post</button>
-            </div>
-        </form> */}
         <div className={s.posts}>
             {postsElements}
         </div>
     </div>
 }
 
-const AddNewPostForm = (props) => {
+const maxLength10 = maxLengthCreator(10);
+
+let AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field name='newPostText' component='textarea' />
-                {/* // <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} /> */}
+                <Field name='newPostText' component={Textarea} validate={[required, maxLength10]} />
             </div>
             <div>
                 <button>Add post</button>
