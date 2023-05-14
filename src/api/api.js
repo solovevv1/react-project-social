@@ -26,7 +26,6 @@ export const usersAPI = {
             .delete(`follow/${userId}`)
     },
     getProfile(userId) {
-        console.log('Obsolete method. Use profile API')
         return profileAPI.getProfile(userId);
     }
 }
