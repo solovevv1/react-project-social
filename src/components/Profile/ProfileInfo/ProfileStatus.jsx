@@ -1,13 +1,11 @@
 import React from 'react'
 
-
 class ProfileStatus extends React.Component {
 
     state = {
         editMode: false,
         status: this.props.status
     }
-
     activateEditMode = () => {
         this.setState({
             editMode: true
@@ -24,12 +22,11 @@ class ProfileStatus extends React.Component {
             status: e.currentTarget.value
         });
     }
-
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.status !== this.props.status)
-        this.setState({
-            status: this.props.status
-        })
+            this.setState({
+                status: this.props.status
+            })
     }
 
     render() {
@@ -50,19 +47,3 @@ class ProfileStatus extends React.Component {
 }
 
 export default ProfileStatus;
-
-
-
-// const ProfileStatus = (props) => {
-//     return (<>
-//         <div>
-//             <span>{props.status}</span>
-//         </div>
-//         <div>
-//         <input value={props.status} />
-//         </div>
-//     </>
-//     )
-// }
-
-// export default ProfileStatus;
