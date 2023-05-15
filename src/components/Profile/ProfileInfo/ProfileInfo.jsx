@@ -1,27 +1,25 @@
 import s from './ProfileInfo.module.css';
 import Preloader from '../../Common/Preloader/Preloader'
-import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({ profile, status, updateStatus }) => {
+    if (!profile) {
         return <Preloader />;
     }
-    return <div>
+    return <>
         <div>
             <img src='https://cleanlife.wdfiles.com/local--files/postcover:beach-header-2/beach-header.jpg' />
         </div>
         <div className={s.descriptionBlock}>
-            <img src={props.profile.photos.small} />
-            {/* <ProfileStatus status={props.status} updateStatus={props.updateStatus} /> */}
-            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
+            <img src={profile.photos.small} />
+            <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
             <div>
-                <div>{props.profile.fullName}</div>
-                <div>{props.profile.aboutMe}</div>
-                <div>{props.profile.contacts.vk}</div>
+                <div>{profile.fullName}</div>
+                <div>{profile.aboutMe}</div>
+                <div>{profile.contacts.vk}</div>
             </div>
         </div>
-    </div>
+    </>
 }
 
 export default ProfileInfo;

@@ -57,5 +57,6 @@ let mapStateToProps = (state) => {
 
 export default compose(
     // withAuthRedirect, // opens access to users when you are log out
-    connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleIsFetching, toggleFollowingProgress, requestUsers })
-)(UsersClass)
+    connect(mapStateToProps,
+        { follow, unfollow, setCurrentPage, toggleIsFetching, toggleFollowingProgress, requestUsers }))
+    (UsersClass)
